@@ -22,7 +22,7 @@ CREATE TABLE _etudiant(
     bourse_superieur varchar(128),
     mention_bac varchar(128),
     serie_bac varchar(128),
-    domainante_bac varchar(128),
+    dominante_bac varchar(128),
     special_bac varchar(128),
     mois_annee_obtention_bac char(7),
     INE varchar(32),
@@ -127,7 +127,6 @@ ALTER TABLE _s_inscrire ADD
 
 set schema 'partie2';
 
-
 -------------INDIVIDU----------------
 
 WbImport -file=/home/azaaaz/Documents/INFO/SAE/SAE2.04/pt2/data/data/v_candidatures.csv
@@ -163,7 +162,7 @@ WbImport -file=/home/azaaaz/Documents/INFO/SAE/SAE2.04/pt2/data/data/v_candidatu
         -delimiter=';'
         -mode=update
         -keyColumns=ine
-        -filecolumns=$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,ine,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,dominante_bac,specialite_bac,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,mois_annee_obtention_bac
+        -filecolumns=%wb_skip%,%wb_skip%,%wb_skip%,%wb_skip%,%wb_skip%,%wb_skip%,%wb_skip%,%wb_skip%,%wb_skip%,%wb_skip%,%wb_skip%,boursier_superieur,%wb_skip%,ine,%wb_skip%,%wb_skip%,%wb_skip%,%wb_skip%,%wb_skip%,%wb_skip%,%wb_skip%,%wb_skip%,,%wb_skip%,%wb_skip%,%wb_skip%,%wb_skip%,%wb_skip%,%wb_skip%,dominante_bac,special_bac,mention_bac,mois_annee_obtention_bac
         -dateformat="yyyy-MM-dd";
 
 -------------CANDIDAT----------------
@@ -174,3 +173,6 @@ WbImport -file=/home/azaaaz/Documents/INFO/SAE/SAE2.04/pt2/data/data/v_candidatu
         -delimiter=';'
         -filecolumns=$wb_skip$,$wb_skip$,classement,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,boursier_lycee,profil_candidat,$wb_skip$,$wb_skip$,etablissement,ville_etablissement,dept_etablissement,$wb_skip$,niveau_etude,type_formation_prec,serie_prec,dominante_prec,specialite_prec,lv1,lv2
         -dateformat="yyyy-MM-dd";
+
+-------------SEMESTRE----------------
+
