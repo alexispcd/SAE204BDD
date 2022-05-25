@@ -233,6 +233,3 @@ WbImport -file=/home/azaaaz/Documents/INFO/SAE/SAE2.04/pt2/data/data/v_resu_s4.c
         -delimiter=';'
         -filecolumns=annee_univ, num_semestre, code_nip, $wb_skip$, $wb_skip$, $wb_skip$, $wb_skip$, $wb_skip$, $wb_skip$, groupe_tp
         -dateformat="yyyy-MM-dd";     
-=======
-
->>>>>>> c136e137cdae500f19e1323122643b1c4c1238ee
