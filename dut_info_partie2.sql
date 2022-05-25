@@ -19,12 +19,13 @@ CREATE TABLE _etudiant(
     code_nip varchar(128),
     cat_socio_etu varchar(128),
     cat_socio_parent varchar(128),
-    bourse_superieur boolean,
+    bourse_superieur varchar(128),
     mention_bac varchar(128),
     serie_bac varchar(128),
     domainante_bac varchar(128),
     special_bac varchar(128),
     mois_annee_obtention_bac char(7),
+    INE varchar(32),
     CONSTRAINT _etudiant_pk PRIMARY KEY (code_nip)
 );
 
@@ -126,6 +127,7 @@ ALTER TABLE _s_inscrire ADD
 
 set schema 'partie2';
 
+
 -------------INDIVIDU----------------
 
 WbImport -file=/home/azaaaz/Documents/INFO/SAE/SAE2.04/pt2/data/data/v_candidatures.csv
@@ -145,22 +147,24 @@ WbImport -file=/home/azaaaz/Documents/INFO/SAE/SAE2.04/pt2/data/data/v_inscripti
         -dateformat="yyyy-MM-dd";
 
 -------------ETUDIANT----------------
+
 WbImport -file=/home/azaaaz/Documents/INFO/SAE/SAE2.04/pt2/data/data/v_inscriptions.csv
         -type=text
         -table=_etudiant
         -delimiter=';'
         -mode=insert,update
-        -keyColumns=code_nip
-        -filecolumns=$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,code_nip,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,cat_socio_etu,cat_socio_parent,serie_bac,mention_bac,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,bourse_superieur
+        -keyColumns=ine
+        -filecolumns=$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,code_nip,ine,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,cat_socio_etu,cat_socio_parent,serie_bac,mention_bac,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,bourse_superieur
         -dateformat="yyyy-MM-dd";
         
 WbImport -file=/home/azaaaz/Documents/INFO/SAE/SAE2.04/pt2/data/data/v_candidatures.csv
         -type=text
         -table=_etudiant
         -delimiter=';'
-        -filecolumns=$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,dominante_bac,specialite_bac,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,mois_annee_obtention_bac
+        -mode=update
+        -keyColumns=ine
+        -filecolumns=$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,ine,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,dominante_bac,specialite_bac,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,$wb_skip$,mois_annee_obtention_bac
         -dateformat="yyyy-MM-dd";
-
 
 -------------CANDIDAT----------------
 
