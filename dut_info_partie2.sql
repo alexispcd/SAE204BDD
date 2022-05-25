@@ -49,7 +49,6 @@ CREATE TABLE _candidat(
 
 CREATE TABLE _inscription(
     groupe_tp char(2) not null,
-    amenagement_evaluation varchar(50) not null,
     code_nip varchar(32),
     num_semestre char(5) not null,
     annee_univ char(9) not null,
@@ -63,9 +62,9 @@ CREATE TABLE _semestre(
 );
 
 CREATE TABLE _module(
-    id_module char(5),
-    libelle_module varchar(50) not null,
-    ue char(2) not null,
+    id_module char(6),
+    libelle_module varchar(128) not null,
+    ue char(4) not null,
     CONSTRAINT _module_pk PRIMARY KEY (id_module)
 );
 
@@ -79,10 +78,10 @@ CREATE TABLE _resultat(
 );
 
 CREATE TABLE _programme(
-    coefficient double precision not null,
-    id_module char(5),
-    num_semestre char(5) not null,
-    annee_univ char(9) not null,
+    coefficient double precision,
+    id_module char(6),
+    num_semestre char(5),
+    annee_univ char(9),
     CONSTRAINT _programme_pk PRIMARY KEY (id_module, num_semestre, annee_univ)
 );
 
@@ -194,5 +193,11 @@ WbImport -file=/home/azaaaz/Documents/INFO/SAE/SAE2.04/pt2/data/data/ppn.csv
         -filecolumns=id_module, ue, libelle_module
         -dateformat="yyyy-MM-dd";
 
--------------INSCRIPTION----------------
+-------------PROGRAMME----------------
 
+WbImport -file=/home/azaaaz/Documents/INFO/SAE/SAE2.04/pt2/data/data/v_programme.csv
+        -type=text
+        -table=_programme
+        -delimiter=';'
+        -filecolumns=annee_univ, num_semestre, id_module, coefficient
+        -dateformat="yyyy-MM-dd";
