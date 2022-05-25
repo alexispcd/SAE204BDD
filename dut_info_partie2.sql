@@ -48,32 +48,32 @@ CREATE TABLE _candidat(
 );
 
 CREATE TABLE _inscription(
-    groupe_tp char(2) not null,
+    groupe_tp char(2),
     code_nip varchar(32),
-    num_semestre char(5) not null,
-    annee_univ char(9) not null,
+    num_semestre char(5),
+    annee_univ char(9),
     CONSTRAINT _inscription_pk PRIMARY KEY (code_nip, num_semestre, annee_univ)
 );
 
 CREATE TABLE _semestre(
-    num_semestre char(5) not null,
-    annee_univ char(9) not null,
+    num_semestre char(5),
+    annee_univ char(9),
     CONSTRAINT _semestre_pk PRIMARY KEY (num_semestre, annee_univ)
 );
 
 CREATE TABLE _module(
     id_module char(6),
-    libelle_module varchar(128) not null,
-    ue char(4) not null,
+    libelle_module varchar(128),
+    ue char(4),
     CONSTRAINT _module_pk PRIMARY KEY (id_module)
 );
 
 CREATE TABLE _resultat(
-    moyenne double precision not null,
+    moyenne double precision,
     id_module char(5),
     code_nip varchar(32),
-    num_semestre char(5) not null,
-    annee_univ char(9) not null,
+    num_semestre char(5),
+    annee_univ char(9),
     CONSTRAINT _resultat_pk PRIMARY KEY (id_module, code_nip, num_semestre, annee_univ)
 );
 
