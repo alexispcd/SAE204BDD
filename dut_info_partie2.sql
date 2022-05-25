@@ -126,6 +126,7 @@ ALTER TABLE _s_inscrire ADD
 
 set schema 'partie2';
 
+
 -------------INDIVIDU----------------
 
 WbImport -file=/home/azaaaz/Documents/INFO/SAE/SAE2.04/pt2/data/data/v_candidatures.csv
@@ -201,3 +202,37 @@ WbImport -file=/home/azaaaz/Documents/INFO/SAE/SAE2.04/pt2/data/data/v_programme
         -delimiter=';'
         -filecolumns=annee_univ, num_semestre, id_module, coefficient
         -dateformat="yyyy-MM-dd";
+<<<<<<< HEAD
+
+-------------INSCRIPTION----------------
+
+WbImport -file=/home/azaaaz/Documents/INFO/SAE/SAE2.04/pt2/data/data/v_resu_s1.csv
+        -type=text
+        -table=_inscription
+        -delimiter=';'
+        -filecolumns=annee_univ, num_semestre, code_nip, $wb_skip$, $wb_skip$, $wb_skip$, $wb_skip$, $wb_skip$, groupe_tp
+        -dateformat="yyyy-MM-dd";      
+
+WbImport -file=/home/azaaaz/Documents/INFO/SAE/SAE2.04/pt2/data/data/v_resu_s2.csv
+        -type=text
+        -table=_inscription
+        -delimiter=';'
+        -filecolumns=annee_univ, num_semestre, code_nip, $wb_skip$, $wb_skip$, $wb_skip$, $wb_skip$, $wb_skip$, $wb_skip$, groupe_tp
+        -dateformat="yyyy-MM-dd";
+        
+WbImport -file=/home/azaaaz/Documents/INFO/SAE/SAE2.04/pt2/data/data/v_resu_s3.csv
+        -type=text
+        -table=_inscription
+        -delimiter=';'
+        -filecolumns=annee_univ, num_semestre, code_nip, $wb_skip$, $wb_skip$, $wb_skip$, $wb_skip$, $wb_skip$, $wb_skip$, groupe_tp
+        -dateformat="yyyy-MM-dd";
+
+WbImport -file=/home/azaaaz/Documents/INFO/SAE/SAE2.04/pt2/data/data/v_resu_s4.csv
+        -type=text
+        -table=_inscription
+        -delimiter=';'
+        -filecolumns=annee_univ, num_semestre, code_nip, $wb_skip$, $wb_skip$, $wb_skip$, $wb_skip$, $wb_skip$, $wb_skip$, groupe_tp
+        -dateformat="yyyy-MM-dd";     
+=======
+
+>>>>>>> c136e137cdae500f19e1323122643b1c4c1238ee
