@@ -187,3 +187,12 @@ WbImport -file=/home/azaaaz/Documents/INFO/SAE/SAE2.04/pt2/data/data/v_programme
 
 -------------MODULE----------------
 
+WbImport -file=/home/azaaaz/Documents/INFO/SAE/SAE2.04/pt2/data/data/ppn.csv
+        -type=text
+        -table=_module
+        -delimiter=';'
+        -filecolumns=id_module, ue, libelle_module
+        -dateformat="yyyy-MM-dd";
+
+-------------INSCRIPTION----------------
+
