@@ -176,3 +176,14 @@ WbImport -file=/home/azaaaz/Documents/INFO/SAE/SAE2.04/pt2/data/data/v_candidatu
 
 -------------SEMESTRE----------------
 
+WbImport -file=/home/azaaaz/Documents/INFO/SAE/SAE2.04/pt2/data/data/v_programme.csv
+        -type=text
+        -table=_semestre
+        -delimiter=';'
+        -mode=insert,update
+        -keyColumns=num_semestre,annee_univ
+        -filecolumns=annee_univ,num_semestre
+        -dateformat="yyyy-MM-dd";
+
+-------------MODULE----------------
+
